@@ -64,7 +64,7 @@ jobs:
           push: true
           file: Dockerfile.multistage
           target: build-release-stage
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
